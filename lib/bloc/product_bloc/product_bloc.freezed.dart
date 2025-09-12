@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,531 +9,568 @@ part of 'product_bloc.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
+
 /// @nodoc
 mixin _$ProductEvent {
-
-
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductEvent);
-}
-
-
-@override
-int get hashCode => runtimeType.hashCode;
-
-@override
-String toString() {
-  return 'ProductEvent()';
-}
-
-
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getListProduct,
+    required TResult Function() searchProduct,
+    required TResult Function() clearProductData,
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getListProduct,
+    TResult? Function()? searchProduct,
+    TResult? Function()? clearProductData,
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getListProduct,
+    TResult Function()? searchProduct,
+    TResult Function()? clearProductData,
+    required TResult orElse(),
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetListProduct value) getListProduct,
+    required TResult Function(_SearchProduct value) searchProduct,
+    required TResult Function(_ClearProduct value) clearProductData,
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetListProduct value)? getListProduct,
+    TResult? Function(_SearchProduct value)? searchProduct,
+    TResult? Function(_ClearProduct value)? clearProductData,
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetListProduct value)? getListProduct,
+    TResult Function(_SearchProduct value)? searchProduct,
+    TResult Function(_ClearProduct value)? clearProductData,
+    required TResult orElse(),
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $ProductEventCopyWith<$Res>  {
-$ProductEventCopyWith(ProductEvent _, $Res Function(ProductEvent) __);
+abstract class $ProductEventCopyWith<$Res> {
+  factory $ProductEventCopyWith(
+    ProductEvent value,
+    $Res Function(ProductEvent) then,
+  ) = _$ProductEventCopyWithImpl<$Res, ProductEvent>;
 }
 
+/// @nodoc
+class _$ProductEventCopyWithImpl<$Res, $Val extends ProductEvent>
+    implements $ProductEventCopyWith<$Res> {
+  _$ProductEventCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [ProductEvent].
-extension ProductEventPatterns on ProductEvent {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _GetListProduct value)?  getListProduct,TResult Function( _SearchProduct value)?  searchProduct,TResult Function( _ClearProduct value)?  clearProductData,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _GetListProduct() when getListProduct != null:
-return getListProduct(_that);case _SearchProduct() when searchProduct != null:
-return searchProduct(_that);case _ClearProduct() when clearProductData != null:
-return clearProductData(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _GetListProduct value)  getListProduct,required TResult Function( _SearchProduct value)  searchProduct,required TResult Function( _ClearProduct value)  clearProductData,}){
-final _that = this;
-switch (_that) {
-case _GetListProduct():
-return getListProduct(_that);case _SearchProduct():
-return searchProduct(_that);case _ClearProduct():
-return clearProductData(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _GetListProduct value)?  getListProduct,TResult? Function( _SearchProduct value)?  searchProduct,TResult? Function( _ClearProduct value)?  clearProductData,}){
-final _that = this;
-switch (_that) {
-case _GetListProduct() when getListProduct != null:
-return getListProduct(_that);case _SearchProduct() when searchProduct != null:
-return searchProduct(_that);case _ClearProduct() when clearProductData != null:
-return clearProductData(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  getListProduct,TResult Function()?  searchProduct,TResult Function()?  clearProductData,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _GetListProduct() when getListProduct != null:
-return getListProduct();case _SearchProduct() when searchProduct != null:
-return searchProduct();case _ClearProduct() when clearProductData != null:
-return clearProductData();case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  getListProduct,required TResult Function()  searchProduct,required TResult Function()  clearProductData,}) {final _that = this;
-switch (_that) {
-case _GetListProduct():
-return getListProduct();case _SearchProduct():
-return searchProduct();case _ClearProduct():
-return clearProductData();case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  getListProduct,TResult? Function()?  searchProduct,TResult? Function()?  clearProductData,}) {final _that = this;
-switch (_that) {
-case _GetListProduct() when getListProduct != null:
-return getListProduct();case _SearchProduct() when searchProduct != null:
-return searchProduct();case _ClearProduct() when clearProductData != null:
-return clearProductData();case _:
-  return null;
-
-}
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$GetListProductImplCopyWith<$Res> {
+  factory _$$GetListProductImplCopyWith(
+    _$GetListProductImpl value,
+    $Res Function(_$GetListProductImpl) then,
+  ) = __$$GetListProductImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetListProductImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$GetListProductImpl>
+    implements _$$GetListProductImplCopyWith<$Res> {
+  __$$GetListProductImplCopyWithImpl(
+    _$GetListProductImpl _value,
+    $Res Function(_$GetListProductImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
+class _$GetListProductImpl implements _GetListProduct {
+  const _$GetListProductImpl();
 
-class _GetListProduct implements ProductEvent {
-  const _GetListProduct();
-  
+  @override
+  String toString() {
+    return 'ProductEvent.getListProduct()';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetListProductImpl);
+  }
 
+  @override
+  int get hashCode => runtimeType.hashCode;
 
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getListProduct,
+    required TResult Function() searchProduct,
+    required TResult Function() clearProductData,
+  }) {
+    return getListProduct();
+  }
 
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getListProduct,
+    TResult? Function()? searchProduct,
+    TResult? Function()? clearProductData,
+  }) {
+    return getListProduct?.call();
+  }
 
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getListProduct,
+    TResult Function()? searchProduct,
+    TResult Function()? clearProductData,
+    required TResult orElse(),
+  }) {
+    if (getListProduct != null) {
+      return getListProduct();
+    }
+    return orElse();
+  }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetListProduct);
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetListProduct value) getListProduct,
+    required TResult Function(_SearchProduct value) searchProduct,
+    required TResult Function(_ClearProduct value) clearProductData,
+  }) {
+    return getListProduct(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetListProduct value)? getListProduct,
+    TResult? Function(_SearchProduct value)? searchProduct,
+    TResult? Function(_ClearProduct value)? clearProductData,
+  }) {
+    return getListProduct?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetListProduct value)? getListProduct,
+    TResult Function(_SearchProduct value)? searchProduct,
+    TResult Function(_ClearProduct value)? clearProductData,
+    required TResult orElse(),
+  }) {
+    if (getListProduct != null) {
+      return getListProduct(this);
+    }
+    return orElse();
+  }
 }
 
-
-@override
-int get hashCode => runtimeType.hashCode;
-
-@override
-String toString() {
-  return 'ProductEvent.getListProduct()';
+abstract class _GetListProduct implements ProductEvent {
+  const factory _GetListProduct() = _$GetListProductImpl;
 }
 
-
+/// @nodoc
+abstract class _$$SearchProductImplCopyWith<$Res> {
+  factory _$$SearchProductImplCopyWith(
+    _$SearchProductImpl value,
+    $Res Function(_$SearchProductImpl) then,
+  ) = __$$SearchProductImplCopyWithImpl<$Res>;
 }
 
+/// @nodoc
+class __$$SearchProductImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$SearchProductImpl>
+    implements _$$SearchProductImplCopyWith<$Res> {
+  __$$SearchProductImplCopyWithImpl(
+    _$SearchProductImpl _value,
+    $Res Function(_$SearchProductImpl) _then,
+  ) : super(_value, _then);
 
-
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
 
 /// @nodoc
 
+class _$SearchProductImpl implements _SearchProduct {
+  const _$SearchProductImpl();
 
-class _SearchProduct implements ProductEvent {
-  const _SearchProduct();
-  
+  @override
+  String toString() {
+    return 'ProductEvent.searchProduct()';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SearchProductImpl);
+  }
 
+  @override
+  int get hashCode => runtimeType.hashCode;
 
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getListProduct,
+    required TResult Function() searchProduct,
+    required TResult Function() clearProductData,
+  }) {
+    return searchProduct();
+  }
 
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getListProduct,
+    TResult? Function()? searchProduct,
+    TResult? Function()? clearProductData,
+  }) {
+    return searchProduct?.call();
+  }
 
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getListProduct,
+    TResult Function()? searchProduct,
+    TResult Function()? clearProductData,
+    required TResult orElse(),
+  }) {
+    if (searchProduct != null) {
+      return searchProduct();
+    }
+    return orElse();
+  }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SearchProduct);
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetListProduct value) getListProduct,
+    required TResult Function(_SearchProduct value) searchProduct,
+    required TResult Function(_ClearProduct value) clearProductData,
+  }) {
+    return searchProduct(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetListProduct value)? getListProduct,
+    TResult? Function(_SearchProduct value)? searchProduct,
+    TResult? Function(_ClearProduct value)? clearProductData,
+  }) {
+    return searchProduct?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetListProduct value)? getListProduct,
+    TResult Function(_SearchProduct value)? searchProduct,
+    TResult Function(_ClearProduct value)? clearProductData,
+    required TResult orElse(),
+  }) {
+    if (searchProduct != null) {
+      return searchProduct(this);
+    }
+    return orElse();
+  }
 }
 
-
-@override
-int get hashCode => runtimeType.hashCode;
-
-@override
-String toString() {
-  return 'ProductEvent.searchProduct()';
+abstract class _SearchProduct implements ProductEvent {
+  const factory _SearchProduct() = _$SearchProductImpl;
 }
 
-
+/// @nodoc
+abstract class _$$ClearProductImplCopyWith<$Res> {
+  factory _$$ClearProductImplCopyWith(
+    _$ClearProductImpl value,
+    $Res Function(_$ClearProductImpl) then,
+  ) = __$$ClearProductImplCopyWithImpl<$Res>;
 }
 
+/// @nodoc
+class __$$ClearProductImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$ClearProductImpl>
+    implements _$$ClearProductImplCopyWith<$Res> {
+  __$$ClearProductImplCopyWithImpl(
+    _$ClearProductImpl _value,
+    $Res Function(_$ClearProductImpl) _then,
+  ) : super(_value, _then);
 
-
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
 
 /// @nodoc
 
+class _$ClearProductImpl implements _ClearProduct {
+  const _$ClearProductImpl();
 
-class _ClearProduct implements ProductEvent {
-  const _ClearProduct();
-  
+  @override
+  String toString() {
+    return 'ProductEvent.clearProductData()';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ClearProductImpl);
+  }
 
+  @override
+  int get hashCode => runtimeType.hashCode;
 
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getListProduct,
+    required TResult Function() searchProduct,
+    required TResult Function() clearProductData,
+  }) {
+    return clearProductData();
+  }
 
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getListProduct,
+    TResult? Function()? searchProduct,
+    TResult? Function()? clearProductData,
+  }) {
+    return clearProductData?.call();
+  }
 
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getListProduct,
+    TResult Function()? searchProduct,
+    TResult Function()? clearProductData,
+    required TResult orElse(),
+  }) {
+    if (clearProductData != null) {
+      return clearProductData();
+    }
+    return orElse();
+  }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ClearProduct);
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetListProduct value) getListProduct,
+    required TResult Function(_SearchProduct value) searchProduct,
+    required TResult Function(_ClearProduct value) clearProductData,
+  }) {
+    return clearProductData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetListProduct value)? getListProduct,
+    TResult? Function(_SearchProduct value)? searchProduct,
+    TResult? Function(_ClearProduct value)? clearProductData,
+  }) {
+    return clearProductData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetListProduct value)? getListProduct,
+    TResult Function(_SearchProduct value)? searchProduct,
+    TResult Function(_ClearProduct value)? clearProductData,
+    required TResult orElse(),
+  }) {
+    if (clearProductData != null) {
+      return clearProductData(this);
+    }
+    return orElse();
+  }
 }
 
-
-@override
-int get hashCode => runtimeType.hashCode;
-
-@override
-String toString() {
-  return 'ProductEvent.clearProductData()';
+abstract class _ClearProduct implements ProductEvent {
+  const factory _ClearProduct() = _$ClearProductImpl;
 }
-
-
-}
-
-
-
 
 /// @nodoc
 mixin _$ProductState {
+  dynamic get status => throw _privateConstructorUsedError;
+  dynamic get isLoadMore => throw _privateConstructorUsedError;
 
- ProductStatus get status;
-/// Create a copy of ProductState
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ProductStateCopyWith<ProductState> get copyWith => _$ProductStateCopyWithImpl<ProductState>(this as ProductState, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductState&&(identical(other.status, status) || other.status == status));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,status);
-
-@override
-String toString() {
-  return 'ProductState(status: $status)';
-}
-
-
+  /// Create a copy of ProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ProductStateCopyWith<ProductState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ProductStateCopyWith<$Res>  {
-  factory $ProductStateCopyWith(ProductState value, $Res Function(ProductState) _then) = _$ProductStateCopyWithImpl;
-@useResult
-$Res call({
- ProductStatus status
-});
-
-
-
-
+abstract class $ProductStateCopyWith<$Res> {
+  factory $ProductStateCopyWith(
+    ProductState value,
+    $Res Function(ProductState) then,
+  ) = _$ProductStateCopyWithImpl<$Res, ProductState>;
+  @useResult
+  $Res call({dynamic status, dynamic isLoadMore});
 }
+
 /// @nodoc
-class _$ProductStateCopyWithImpl<$Res>
+class _$ProductStateCopyWithImpl<$Res, $Val extends ProductState>
     implements $ProductStateCopyWith<$Res> {
-  _$ProductStateCopyWithImpl(this._self, this._then);
+  _$ProductStateCopyWithImpl(this._value, this._then);
 
-  final ProductState _self;
-  final $Res Function(ProductState) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of ProductState
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? status = null,}) {
-  return _then(_self.copyWith(
-status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as ProductStatus,
-  ));
+  /// Create a copy of ProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? status = freezed, Object? isLoadMore = freezed}) {
+    return _then(
+      _value.copyWith(
+            status:
+                freezed == status
+                    ? _value.status
+                    : status // ignore: cast_nullable_to_non_nullable
+                        as dynamic,
+            isLoadMore:
+                freezed == isLoadMore
+                    ? _value.isLoadMore
+                    : isLoadMore // ignore: cast_nullable_to_non_nullable
+                        as dynamic,
+          )
+          as $Val,
+    );
+  }
 }
 
+/// @nodoc
+abstract class _$$ProductStateImplCopyWith<$Res>
+    implements $ProductStateCopyWith<$Res> {
+  factory _$$ProductStateImplCopyWith(
+    _$ProductStateImpl value,
+    $Res Function(_$ProductStateImpl) then,
+  ) = __$$ProductStateImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({dynamic status, dynamic isLoadMore});
 }
 
+/// @nodoc
+class __$$ProductStateImplCopyWithImpl<$Res>
+    extends _$ProductStateCopyWithImpl<$Res, _$ProductStateImpl>
+    implements _$$ProductStateImplCopyWith<$Res> {
+  __$$ProductStateImplCopyWithImpl(
+    _$ProductStateImpl _value,
+    $Res Function(_$ProductStateImpl) _then,
+  ) : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [ProductState].
-extension ProductStatePatterns on ProductState {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ProductState value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _ProductState() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ProductState value)  $default,){
-final _that = this;
-switch (_that) {
-case _ProductState():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ProductState value)?  $default,){
-final _that = this;
-switch (_that) {
-case _ProductState() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ProductStatus status)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _ProductState() when $default != null:
-return $default(_that.status);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ProductStatus status)  $default,) {final _that = this;
-switch (_that) {
-case _ProductState():
-return $default(_that.status);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ProductStatus status)?  $default,) {final _that = this;
-switch (_that) {
-case _ProductState() when $default != null:
-return $default(_that.status);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of ProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? status = freezed, Object? isLoadMore = freezed}) {
+    return _then(
+      _$ProductStateImpl(
+        status: freezed == status ? _value.status! : status,
+        isLoadMore: freezed == isLoadMore ? _value.isLoadMore! : isLoadMore,
+      ),
+    );
+  }
 }
 
 /// @nodoc
 
+class _$ProductStateImpl implements _ProductState {
+  const _$ProductStateImpl({
+    this.status = ProductStatus.init,
+    this.isLoadMore = false,
+  });
 
-class _ProductState implements ProductState {
-  const _ProductState({this.status = ProductStatus.init});
-  
+  @override
+  @JsonKey()
+  final dynamic status;
+  @override
+  @JsonKey()
+  final dynamic isLoadMore;
 
-@override@JsonKey() final  ProductStatus status;
+  @override
+  String toString() {
+    return 'ProductState(status: $status, isLoadMore: $isLoadMore)';
+  }
 
-/// Create a copy of ProductState
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$ProductStateCopyWith<_ProductState> get copyWith => __$ProductStateCopyWithImpl<_ProductState>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProductStateImpl &&
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality().equals(
+              other.isLoadMore,
+              isLoadMore,
+            ));
+  }
 
+  @override
+  int get hashCode => Object.hash(
+    runtimeType,
+    const DeepCollectionEquality().hash(status),
+    const DeepCollectionEquality().hash(isLoadMore),
+  );
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ProductState&&(identical(other.status, status) || other.status == status));
+  /// Create a copy of ProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProductStateImplCopyWith<_$ProductStateImpl> get copyWith =>
+      __$$ProductStateImplCopyWithImpl<_$ProductStateImpl>(this, _$identity);
 }
 
+abstract class _ProductState implements ProductState {
+  const factory _ProductState({
+    final dynamic status,
+    final dynamic isLoadMore,
+  }) = _$ProductStateImpl;
 
-@override
-int get hashCode => Object.hash(runtimeType,status);
+  @override
+  dynamic get status;
+  @override
+  dynamic get isLoadMore;
 
-@override
-String toString() {
-  return 'ProductState(status: $status)';
+  /// Create a copy of ProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ProductStateImplCopyWith<_$ProductStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-
-}
-
-/// @nodoc
-abstract mixin class _$ProductStateCopyWith<$Res> implements $ProductStateCopyWith<$Res> {
-  factory _$ProductStateCopyWith(_ProductState value, $Res Function(_ProductState) _then) = __$ProductStateCopyWithImpl;
-@override @useResult
-$Res call({
- ProductStatus status
-});
-
-
-
-
-}
-/// @nodoc
-class __$ProductStateCopyWithImpl<$Res>
-    implements _$ProductStateCopyWith<$Res> {
-  __$ProductStateCopyWithImpl(this._self, this._then);
-
-  final _ProductState _self;
-  final $Res Function(_ProductState) _then;
-
-/// Create a copy of ProductState
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? status = null,}) {
-  return _then(_ProductState(
-status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as ProductStatus,
-  ));
-}
-
-
-}
-
-// dart format on
