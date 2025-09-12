@@ -20,11 +20,15 @@ class _AppContainerState extends State<AppContainer> {
       home: Scaffold(
         appBar: AppBar(title: BBText(text: "BurningBros Project", bold: true)),
         body: Center(
-          child: TextButton(
-            onPressed: () {
-              Navigator.pushNamed(context, PathRoutes.ListProduct);
+          child: Builder(
+            builder: (context) {
+              return TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, PathRoutes.ListProduct);
+                },
+                child: BBText(text: "Get list product"),
+              );
             },
-            child: BBText(text: "Get list product"),
           ),
         ),
       ),

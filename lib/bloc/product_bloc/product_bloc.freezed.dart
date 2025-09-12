@@ -19,20 +19,20 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ProductEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getListProduct,
-    required TResult Function() searchProduct,
+    required TResult Function(bool isLoadMore) getListProduct,
+    required TResult Function(String keyword) searchProduct,
     required TResult Function() clearProductData,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getListProduct,
-    TResult? Function()? searchProduct,
+    TResult? Function(bool isLoadMore)? getListProduct,
+    TResult? Function(String keyword)? searchProduct,
     TResult? Function()? clearProductData,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getListProduct,
-    TResult Function()? searchProduct,
+    TResult Function(bool isLoadMore)? getListProduct,
+    TResult Function(String keyword)? searchProduct,
     TResult Function()? clearProductData,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
@@ -85,6 +85,8 @@ abstract class _$$GetListProductImplCopyWith<$Res> {
     _$GetListProductImpl value,
     $Res Function(_$GetListProductImpl) then,
   ) = __$$GetListProductImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isLoadMore});
 }
 
 /// @nodoc
@@ -98,57 +100,86 @@ class __$$GetListProductImplCopyWithImpl<$Res>
 
   /// Create a copy of ProductEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? isLoadMore = null}) {
+    return _then(
+      _$GetListProductImpl(
+        null == isLoadMore
+            ? _value.isLoadMore
+            : isLoadMore // ignore: cast_nullable_to_non_nullable
+                as bool,
+      ),
+    );
+  }
 }
 
 /// @nodoc
 
 class _$GetListProductImpl implements _GetListProduct {
-  const _$GetListProductImpl();
+  const _$GetListProductImpl(this.isLoadMore);
+
+  @override
+  final bool isLoadMore;
 
   @override
   String toString() {
-    return 'ProductEvent.getListProduct()';
+    return 'ProductEvent.getListProduct(isLoadMore: $isLoadMore)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetListProductImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$GetListProductImpl &&
+            (identical(other.isLoadMore, isLoadMore) ||
+                other.isLoadMore == isLoadMore));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, isLoadMore);
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetListProductImplCopyWith<_$GetListProductImpl> get copyWith =>
+      __$$GetListProductImplCopyWithImpl<_$GetListProductImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getListProduct,
-    required TResult Function() searchProduct,
+    required TResult Function(bool isLoadMore) getListProduct,
+    required TResult Function(String keyword) searchProduct,
     required TResult Function() clearProductData,
   }) {
-    return getListProduct();
+    return getListProduct(isLoadMore);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getListProduct,
-    TResult? Function()? searchProduct,
+    TResult? Function(bool isLoadMore)? getListProduct,
+    TResult? Function(String keyword)? searchProduct,
     TResult? Function()? clearProductData,
   }) {
-    return getListProduct?.call();
+    return getListProduct?.call(isLoadMore);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getListProduct,
-    TResult Function()? searchProduct,
+    TResult Function(bool isLoadMore)? getListProduct,
+    TResult Function(String keyword)? searchProduct,
     TResult Function()? clearProductData,
     required TResult orElse(),
   }) {
     if (getListProduct != null) {
-      return getListProduct();
+      return getListProduct(isLoadMore);
     }
     return orElse();
   }
@@ -189,7 +220,15 @@ class _$GetListProductImpl implements _GetListProduct {
 }
 
 abstract class _GetListProduct implements ProductEvent {
-  const factory _GetListProduct() = _$GetListProductImpl;
+  const factory _GetListProduct(final bool isLoadMore) = _$GetListProductImpl;
+
+  bool get isLoadMore;
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetListProductImplCopyWith<_$GetListProductImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -198,6 +237,8 @@ abstract class _$$SearchProductImplCopyWith<$Res> {
     _$SearchProductImpl value,
     $Res Function(_$SearchProductImpl) then,
   ) = __$$SearchProductImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String keyword});
 }
 
 /// @nodoc
@@ -211,57 +252,82 @@ class __$$SearchProductImplCopyWithImpl<$Res>
 
   /// Create a copy of ProductEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? keyword = null}) {
+    return _then(
+      _$SearchProductImpl(
+        null == keyword
+            ? _value.keyword
+            : keyword // ignore: cast_nullable_to_non_nullable
+                as String,
+      ),
+    );
+  }
 }
 
 /// @nodoc
 
 class _$SearchProductImpl implements _SearchProduct {
-  const _$SearchProductImpl();
+  const _$SearchProductImpl(this.keyword);
+
+  @override
+  final String keyword;
 
   @override
   String toString() {
-    return 'ProductEvent.searchProduct()';
+    return 'ProductEvent.searchProduct(keyword: $keyword)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SearchProductImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$SearchProductImpl &&
+            (identical(other.keyword, keyword) || other.keyword == keyword));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, keyword);
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SearchProductImplCopyWith<_$SearchProductImpl> get copyWith =>
+      __$$SearchProductImplCopyWithImpl<_$SearchProductImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getListProduct,
-    required TResult Function() searchProduct,
+    required TResult Function(bool isLoadMore) getListProduct,
+    required TResult Function(String keyword) searchProduct,
     required TResult Function() clearProductData,
   }) {
-    return searchProduct();
+    return searchProduct(keyword);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getListProduct,
-    TResult? Function()? searchProduct,
+    TResult? Function(bool isLoadMore)? getListProduct,
+    TResult? Function(String keyword)? searchProduct,
     TResult? Function()? clearProductData,
   }) {
-    return searchProduct?.call();
+    return searchProduct?.call(keyword);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getListProduct,
-    TResult Function()? searchProduct,
+    TResult Function(bool isLoadMore)? getListProduct,
+    TResult Function(String keyword)? searchProduct,
     TResult Function()? clearProductData,
     required TResult orElse(),
   }) {
     if (searchProduct != null) {
-      return searchProduct();
+      return searchProduct(keyword);
     }
     return orElse();
   }
@@ -302,7 +368,15 @@ class _$SearchProductImpl implements _SearchProduct {
 }
 
 abstract class _SearchProduct implements ProductEvent {
-  const factory _SearchProduct() = _$SearchProductImpl;
+  const factory _SearchProduct(final String keyword) = _$SearchProductImpl;
+
+  String get keyword;
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SearchProductImplCopyWith<_$SearchProductImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -348,8 +422,8 @@ class _$ClearProductImpl implements _ClearProduct {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getListProduct,
-    required TResult Function() searchProduct,
+    required TResult Function(bool isLoadMore) getListProduct,
+    required TResult Function(String keyword) searchProduct,
     required TResult Function() clearProductData,
   }) {
     return clearProductData();
@@ -358,8 +432,8 @@ class _$ClearProductImpl implements _ClearProduct {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getListProduct,
-    TResult? Function()? searchProduct,
+    TResult? Function(bool isLoadMore)? getListProduct,
+    TResult? Function(String keyword)? searchProduct,
     TResult? Function()? clearProductData,
   }) {
     return clearProductData?.call();
@@ -368,8 +442,8 @@ class _$ClearProductImpl implements _ClearProduct {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getListProduct,
-    TResult Function()? searchProduct,
+    TResult Function(bool isLoadMore)? getListProduct,
+    TResult Function(String keyword)? searchProduct,
     TResult Function()? clearProductData,
     required TResult orElse(),
   }) {
@@ -422,6 +496,7 @@ abstract class _ClearProduct implements ProductEvent {
 mixin _$ProductState {
   dynamic get status => throw _privateConstructorUsedError;
   dynamic get isLoadMore => throw _privateConstructorUsedError;
+  ResponseProduct? get products => throw _privateConstructorUsedError;
 
   /// Create a copy of ProductState
   /// with the given fields replaced by the non-null parameter values.
@@ -437,7 +512,9 @@ abstract class $ProductStateCopyWith<$Res> {
     $Res Function(ProductState) then,
   ) = _$ProductStateCopyWithImpl<$Res, ProductState>;
   @useResult
-  $Res call({dynamic status, dynamic isLoadMore});
+  $Res call({dynamic status, dynamic isLoadMore, ResponseProduct? products});
+
+  $ResponseProductCopyWith<$Res>? get products;
 }
 
 /// @nodoc
@@ -454,7 +531,11 @@ class _$ProductStateCopyWithImpl<$Res, $Val extends ProductState>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? status = freezed, Object? isLoadMore = freezed}) {
+  $Res call({
+    Object? status = freezed,
+    Object? isLoadMore = freezed,
+    Object? products = freezed,
+  }) {
     return _then(
       _value.copyWith(
             status:
@@ -467,9 +548,28 @@ class _$ProductStateCopyWithImpl<$Res, $Val extends ProductState>
                     ? _value.isLoadMore
                     : isLoadMore // ignore: cast_nullable_to_non_nullable
                         as dynamic,
+            products:
+                freezed == products
+                    ? _value.products
+                    : products // ignore: cast_nullable_to_non_nullable
+                        as ResponseProduct?,
           )
           as $Val,
     );
+  }
+
+  /// Create a copy of ProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ResponseProductCopyWith<$Res>? get products {
+    if (_value.products == null) {
+      return null;
+    }
+
+    return $ResponseProductCopyWith<$Res>(_value.products!, (value) {
+      return _then(_value.copyWith(products: value) as $Val);
+    });
   }
 }
 
@@ -482,7 +582,10 @@ abstract class _$$ProductStateImplCopyWith<$Res>
   ) = __$$ProductStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic status, dynamic isLoadMore});
+  $Res call({dynamic status, dynamic isLoadMore, ResponseProduct? products});
+
+  @override
+  $ResponseProductCopyWith<$Res>? get products;
 }
 
 /// @nodoc
@@ -498,11 +601,20 @@ class __$$ProductStateImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? status = freezed, Object? isLoadMore = freezed}) {
+  $Res call({
+    Object? status = freezed,
+    Object? isLoadMore = freezed,
+    Object? products = freezed,
+  }) {
     return _then(
       _$ProductStateImpl(
         status: freezed == status ? _value.status! : status,
         isLoadMore: freezed == isLoadMore ? _value.isLoadMore! : isLoadMore,
+        products:
+            freezed == products
+                ? _value.products
+                : products // ignore: cast_nullable_to_non_nullable
+                    as ResponseProduct?,
       ),
     );
   }
@@ -514,6 +626,7 @@ class _$ProductStateImpl implements _ProductState {
   const _$ProductStateImpl({
     this.status = ProductStatus.init,
     this.isLoadMore = false,
+    this.products,
   });
 
   @override
@@ -522,10 +635,12 @@ class _$ProductStateImpl implements _ProductState {
   @override
   @JsonKey()
   final dynamic isLoadMore;
+  @override
+  final ResponseProduct? products;
 
   @override
   String toString() {
-    return 'ProductState(status: $status, isLoadMore: $isLoadMore)';
+    return 'ProductState(status: $status, isLoadMore: $isLoadMore, products: $products)';
   }
 
   @override
@@ -537,7 +652,9 @@ class _$ProductStateImpl implements _ProductState {
             const DeepCollectionEquality().equals(
               other.isLoadMore,
               isLoadMore,
-            ));
+            ) &&
+            (identical(other.products, products) ||
+                other.products == products));
   }
 
   @override
@@ -545,6 +662,7 @@ class _$ProductStateImpl implements _ProductState {
     runtimeType,
     const DeepCollectionEquality().hash(status),
     const DeepCollectionEquality().hash(isLoadMore),
+    products,
   );
 
   /// Create a copy of ProductState
@@ -560,12 +678,15 @@ abstract class _ProductState implements ProductState {
   const factory _ProductState({
     final dynamic status,
     final dynamic isLoadMore,
+    final ResponseProduct? products,
   }) = _$ProductStateImpl;
 
   @override
   dynamic get status;
   @override
   dynamic get isLoadMore;
+  @override
+  ResponseProduct? get products;
 
   /// Create a copy of ProductState
   /// with the given fields replaced by the non-null parameter values.

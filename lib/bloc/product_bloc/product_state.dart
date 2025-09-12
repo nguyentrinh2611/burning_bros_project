@@ -5,6 +5,9 @@ enum ProductStatus { init, loading, success, error }
 
 @freezed
 class ProductState with _$ProductState {
-  const factory ProductState({@Default(ProductStatus.init) status, @Default(false) isLoadMore}) =
-      _ProductState;
+  const factory ProductState({
+    @Default(ProductStatus.init) status,
+    @Default(false) isLoadMore,
+    ResponseProduct? products,
+  }) = _ProductState;
 }
