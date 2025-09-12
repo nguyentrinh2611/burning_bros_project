@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:burning_bros_project/bloc/product_bloc/product_bloc.dart';
 import 'package:burning_bros_project/components/bb_text.dart';
 import 'package:burning_bros_project/models/model_product.dart';
@@ -16,6 +18,7 @@ class _ListProductState extends State<ListProduct> {
   ScrollController controller = ScrollController();
   TextEditingController textEditingController = TextEditingController();
   ProductBloc? _productBloc;
+  Timer? _debounce;
 
   @override
   void initState() {
@@ -29,6 +32,7 @@ class _ListProductState extends State<ListProduct> {
   void dispose() {
     super.dispose();
     _productBloc!.add(ProductEvent.clearProductData());
+    _debounce?.cancel();
   }
 
   void _onScroll() {
@@ -42,6 +46,14 @@ class _ListProductState extends State<ListProduct> {
     _productBloc!.add(ProductEvent.getListProduct(false));
   }
 
+  void _onSearchChanged(String query) {
+    if (_debounce?.isActive ?? false) _debounce!.cancel();
+
+    _debounce = Timer(const Duration(milliseconds: 500), () {
+      _productBloc!.add(ProductEvent.searchProduct(query));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +62,10 @@ class _ListProductState extends State<ListProduct> {
         padding: EdgeInsets.all(12),
         child: BlocBuilder<ProductBloc, ProductState>(
           builder: (context, state) {
-            List<ItemProduct> products = state.products?.products ?? [];
+            List<ItemProduct> products =
+                textEditingController.text.isNotEmpty
+                    ? state.productsSearch?.products ?? []
+                    : state.products?.products ?? [];
 
             return RefreshIndicator(
               onRefresh: _onRefresh,
@@ -63,7 +78,9 @@ class _ListProductState extends State<ListProduct> {
                         FocusScope.of(context).focusedChild?.unfocus();
                       },
                       controller: textEditingController,
-                      onChanged: (value) {},
+                      onChanged: (value) {
+                        _onSearchChanged(value);
+                      },
                       enabled: true,
                       style: TextStyle(
                         color: Colors.black,

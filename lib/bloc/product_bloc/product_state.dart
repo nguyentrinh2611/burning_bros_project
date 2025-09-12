@@ -9,5 +9,6 @@ class ProductState with _$ProductState {
     @Default(ProductStatus.init) status,
     @Default(false) isLoadMore,
     ResponseProduct? products,
+    ResponseProduct? productsSearch,
   }) = _ProductState;
 }

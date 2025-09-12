@@ -497,6 +497,7 @@ mixin _$ProductState {
   dynamic get status => throw _privateConstructorUsedError;
   dynamic get isLoadMore => throw _privateConstructorUsedError;
   ResponseProduct? get products => throw _privateConstructorUsedError;
+  ResponseProduct? get productsSearch => throw _privateConstructorUsedError;
 
   /// Create a copy of ProductState
   /// with the given fields replaced by the non-null parameter values.
@@ -512,9 +513,15 @@ abstract class $ProductStateCopyWith<$Res> {
     $Res Function(ProductState) then,
   ) = _$ProductStateCopyWithImpl<$Res, ProductState>;
   @useResult
-  $Res call({dynamic status, dynamic isLoadMore, ResponseProduct? products});
+  $Res call({
+    dynamic status,
+    dynamic isLoadMore,
+    ResponseProduct? products,
+    ResponseProduct? productsSearch,
+  });
 
   $ResponseProductCopyWith<$Res>? get products;
+  $ResponseProductCopyWith<$Res>? get productsSearch;
 }
 
 /// @nodoc
@@ -535,6 +542,7 @@ class _$ProductStateCopyWithImpl<$Res, $Val extends ProductState>
     Object? status = freezed,
     Object? isLoadMore = freezed,
     Object? products = freezed,
+    Object? productsSearch = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -552,6 +560,11 @@ class _$ProductStateCopyWithImpl<$Res, $Val extends ProductState>
                 freezed == products
                     ? _value.products
                     : products // ignore: cast_nullable_to_non_nullable
+                        as ResponseProduct?,
+            productsSearch:
+                freezed == productsSearch
+                    ? _value.productsSearch
+                    : productsSearch // ignore: cast_nullable_to_non_nullable
                         as ResponseProduct?,
           )
           as $Val,
@@ -571,6 +584,20 @@ class _$ProductStateCopyWithImpl<$Res, $Val extends ProductState>
       return _then(_value.copyWith(products: value) as $Val);
     });
   }
+
+  /// Create a copy of ProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ResponseProductCopyWith<$Res>? get productsSearch {
+    if (_value.productsSearch == null) {
+      return null;
+    }
+
+    return $ResponseProductCopyWith<$Res>(_value.productsSearch!, (value) {
+      return _then(_value.copyWith(productsSearch: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -582,10 +609,17 @@ abstract class _$$ProductStateImplCopyWith<$Res>
   ) = __$$ProductStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic status, dynamic isLoadMore, ResponseProduct? products});
+  $Res call({
+    dynamic status,
+    dynamic isLoadMore,
+    ResponseProduct? products,
+    ResponseProduct? productsSearch,
+  });
 
   @override
   $ResponseProductCopyWith<$Res>? get products;
+  @override
+  $ResponseProductCopyWith<$Res>? get productsSearch;
 }
 
 /// @nodoc
@@ -605,6 +639,7 @@ class __$$ProductStateImplCopyWithImpl<$Res>
     Object? status = freezed,
     Object? isLoadMore = freezed,
     Object? products = freezed,
+    Object? productsSearch = freezed,
   }) {
     return _then(
       _$ProductStateImpl(
@@ -614,6 +649,11 @@ class __$$ProductStateImplCopyWithImpl<$Res>
             freezed == products
                 ? _value.products
                 : products // ignore: cast_nullable_to_non_nullable
+                    as ResponseProduct?,
+        productsSearch:
+            freezed == productsSearch
+                ? _value.productsSearch
+                : productsSearch // ignore: cast_nullable_to_non_nullable
                     as ResponseProduct?,
       ),
     );
@@ -627,6 +667,7 @@ class _$ProductStateImpl implements _ProductState {
     this.status = ProductStatus.init,
     this.isLoadMore = false,
     this.products,
+    this.productsSearch,
   });
 
   @override
@@ -637,10 +678,12 @@ class _$ProductStateImpl implements _ProductState {
   final dynamic isLoadMore;
   @override
   final ResponseProduct? products;
+  @override
+  final ResponseProduct? productsSearch;
 
   @override
   String toString() {
-    return 'ProductState(status: $status, isLoadMore: $isLoadMore, products: $products)';
+    return 'ProductState(status: $status, isLoadMore: $isLoadMore, products: $products, productsSearch: $productsSearch)';
   }
 
   @override
@@ -654,7 +697,9 @@ class _$ProductStateImpl implements _ProductState {
               isLoadMore,
             ) &&
             (identical(other.products, products) ||
-                other.products == products));
+                other.products == products) &&
+            (identical(other.productsSearch, productsSearch) ||
+                other.productsSearch == productsSearch));
   }
 
   @override
@@ -663,6 +708,7 @@ class _$ProductStateImpl implements _ProductState {
     const DeepCollectionEquality().hash(status),
     const DeepCollectionEquality().hash(isLoadMore),
     products,
+    productsSearch,
   );
 
   /// Create a copy of ProductState
@@ -679,6 +725,7 @@ abstract class _ProductState implements ProductState {
     final dynamic status,
     final dynamic isLoadMore,
     final ResponseProduct? products,
+    final ResponseProduct? productsSearch,
   }) = _$ProductStateImpl;
 
   @override
@@ -687,6 +734,8 @@ abstract class _ProductState implements ProductState {
   dynamic get isLoadMore;
   @override
   ResponseProduct? get products;
+  @override
+  ResponseProduct? get productsSearch;
 
   /// Create a copy of ProductState
   /// with the given fields replaced by the non-null parameter values.

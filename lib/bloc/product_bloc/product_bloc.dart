@@ -37,7 +37,12 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
 
   void _searchProduct(_SearchProduct event, Emitter emit) async {
     try {
-      final response = await productRepository.fetchSearchProduct("");
+      if (event.keyword.isEmpty) {
+        emit(state.copyWith(productsSearch: null));
+        return;
+      }
+      final response = await productRepository.fetchSearchProduct(event.keyword);
+      emit(state.copyWith(productsSearch: response));
     } catch (e) {
       Log.e(e);
     }
