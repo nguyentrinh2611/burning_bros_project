@@ -53,7 +53,11 @@ class _ListProductState extends State<ListProduct> {
     if (_debounce?.isActive ?? false) _debounce!.cancel();
 
     _debounce = Timer(const Duration(milliseconds: 500), () {
-      _productBloc!.add(ProductEvent.searchProduct(query));
+      if (query.isEmpty) {
+        _productBloc!.add(ProductEvent.getListProduct(false));
+      } else {
+        _productBloc!.add(ProductEvent.searchProduct(query));
+      }
     });
   }
 
@@ -144,7 +148,9 @@ class _ListProductState extends State<ListProduct> {
                                 );
                               },
                             )
-                            : Center(child: BBText(text: "No products yet")),
+                            : state.status == ProductStatus.noInternet
+                            ? Center(child: BBText(text: "No wifi connection"))
+                            : Center(child: BBText(text: "No product yet")),
                   ),
                   if (state.isLoadMore) Center(child: CircularProgressIndicator()),
                 ],

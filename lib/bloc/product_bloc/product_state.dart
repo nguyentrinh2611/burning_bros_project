@@ -1,7 +1,7 @@
 part of 'product_bloc.dart';
 
 //declare ProductStatus
-enum ProductStatus { init, loading, success, error }
+enum ProductStatus { init, loading, success, error, noInternet, endReached }
 
 @freezed
 class ProductState with _$ProductState {

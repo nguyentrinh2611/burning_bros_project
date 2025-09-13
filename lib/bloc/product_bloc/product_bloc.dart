@@ -1,6 +1,7 @@
 import 'package:burning_bros_project/client/repository/product_repository.dart';
 import 'package:burning_bros_project/core/log.dart';
 import 'package:burning_bros_project/models/model_product.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -11,7 +12,6 @@ part 'product_bloc.freezed.dart';
 
 class ProductBloc extends Bloc<ProductEvent, ProductState> {
   final favoritesBox = Hive.box("favorites");
-
   ProductBloc() : super(const ProductState()) {
     // get list product
     on<_GetListProduct>(_getListProduct);
@@ -30,7 +30,16 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
   }
 
   final productRepository = ProductRepository();
+  final connectivity = Connectivity();
+
   void _getListProduct(_GetListProduct event, Emitter emit) async {
+    // check internet connection
+    final result = await connectivity.checkConnectivity();
+    if (result.contains(ConnectivityResult.none)) {
+      emit(state.copyWith(status: ProductStatus.noInternet));
+      return;
+    }
+
     try {
       ResponseProduct? productsLocal = state.products;
       if (state.isLoadMore && productsLocal?.total == productsLocal?.products.length) return;
@@ -50,6 +59,13 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
   }
 
   void _searchProduct(_SearchProduct event, Emitter emit) async {
+    // check internet connection
+    final result = await connectivity.checkConnectivity();
+    if (result.contains(ConnectivityResult.none)) {
+      emit(state.copyWith(status: ProductStatus.noInternet));
+      return;
+    }
+
     try {
       if (event.keyword.isEmpty) {
         emit(state.copyWith(productsSearch: null));
