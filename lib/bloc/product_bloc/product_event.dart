@@ -10,4 +10,10 @@ class ProductEvent with _$ProductEvent {
 
   //initial event clear data
   const factory ProductEvent.clearProductData() = _ClearProduct;
+
+  //initial event favorite product
+  const factory ProductEvent.favoriteProduct(int productId) = _FavoriteProduct;
+
+  //initial event load favorite product from local DB
+  const factory ProductEvent.loadFavorites() = _LoadFavorites;
 }

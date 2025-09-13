@@ -12,8 +12,7 @@ part of 'product_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ProductEvent {
@@ -22,47 +21,64 @@ mixin _$ProductEvent {
     required TResult Function(bool isLoadMore) getListProduct,
     required TResult Function(String keyword) searchProduct,
     required TResult Function() clearProductData,
-  }) => throw _privateConstructorUsedError;
+    required TResult Function(int productId) favoriteProduct,
+    required TResult Function() loadFavorites,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isLoadMore)? getListProduct,
     TResult? Function(String keyword)? searchProduct,
     TResult? Function()? clearProductData,
-  }) => throw _privateConstructorUsedError;
+    TResult? Function(int productId)? favoriteProduct,
+    TResult? Function()? loadFavorites,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isLoadMore)? getListProduct,
     TResult Function(String keyword)? searchProduct,
     TResult Function()? clearProductData,
+    TResult Function(int productId)? favoriteProduct,
+    TResult Function()? loadFavorites,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetListProduct value) getListProduct,
     required TResult Function(_SearchProduct value) searchProduct,
     required TResult Function(_ClearProduct value) clearProductData,
-  }) => throw _privateConstructorUsedError;
+    required TResult Function(_FavoriteProduct value) favoriteProduct,
+    required TResult Function(_LoadFavorites value) loadFavorites,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetListProduct value)? getListProduct,
     TResult? Function(_SearchProduct value)? searchProduct,
     TResult? Function(_ClearProduct value)? clearProductData,
-  }) => throw _privateConstructorUsedError;
+    TResult? Function(_FavoriteProduct value)? favoriteProduct,
+    TResult? Function(_LoadFavorites value)? loadFavorites,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetListProduct value)? getListProduct,
     TResult Function(_SearchProduct value)? searchProduct,
     TResult Function(_ClearProduct value)? clearProductData,
+    TResult Function(_FavoriteProduct value)? favoriteProduct,
+    TResult Function(_LoadFavorites value)? loadFavorites,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ProductEventCopyWith<$Res> {
   factory $ProductEventCopyWith(
-    ProductEvent value,
-    $Res Function(ProductEvent) then,
-  ) = _$ProductEventCopyWithImpl<$Res, ProductEvent>;
+          ProductEvent value, $Res Function(ProductEvent) then) =
+      _$ProductEventCopyWithImpl<$Res, ProductEvent>;
 }
 
 /// @nodoc
@@ -81,10 +97,9 @@ class _$ProductEventCopyWithImpl<$Res, $Val extends ProductEvent>
 
 /// @nodoc
 abstract class _$$GetListProductImplCopyWith<$Res> {
-  factory _$$GetListProductImplCopyWith(
-    _$GetListProductImpl value,
-    $Res Function(_$GetListProductImpl) then,
-  ) = __$$GetListProductImplCopyWithImpl<$Res>;
+  factory _$$GetListProductImplCopyWith(_$GetListProductImpl value,
+          $Res Function(_$GetListProductImpl) then) =
+      __$$GetListProductImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isLoadMore});
 }
@@ -94,23 +109,22 @@ class __$$GetListProductImplCopyWithImpl<$Res>
     extends _$ProductEventCopyWithImpl<$Res, _$GetListProductImpl>
     implements _$$GetListProductImplCopyWith<$Res> {
   __$$GetListProductImplCopyWithImpl(
-    _$GetListProductImpl _value,
-    $Res Function(_$GetListProductImpl) _then,
-  ) : super(_value, _then);
+      _$GetListProductImpl _value, $Res Function(_$GetListProductImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ProductEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? isLoadMore = null}) {
-    return _then(
-      _$GetListProductImpl(
-        null == isLoadMore
-            ? _value.isLoadMore
-            : isLoadMore // ignore: cast_nullable_to_non_nullable
-                as bool,
-      ),
-    );
+  $Res call({
+    Object? isLoadMore = null,
+  }) {
+    return _then(_$GetListProductImpl(
+      null == isLoadMore
+          ? _value.isLoadMore
+          : isLoadMore // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
   }
 }
 
@@ -146,9 +160,7 @@ class _$GetListProductImpl implements _GetListProduct {
   @pragma('vm:prefer-inline')
   _$$GetListProductImplCopyWith<_$GetListProductImpl> get copyWith =>
       __$$GetListProductImplCopyWithImpl<_$GetListProductImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -156,6 +168,8 @@ class _$GetListProductImpl implements _GetListProduct {
     required TResult Function(bool isLoadMore) getListProduct,
     required TResult Function(String keyword) searchProduct,
     required TResult Function() clearProductData,
+    required TResult Function(int productId) favoriteProduct,
+    required TResult Function() loadFavorites,
   }) {
     return getListProduct(isLoadMore);
   }
@@ -166,6 +180,8 @@ class _$GetListProductImpl implements _GetListProduct {
     TResult? Function(bool isLoadMore)? getListProduct,
     TResult? Function(String keyword)? searchProduct,
     TResult? Function()? clearProductData,
+    TResult? Function(int productId)? favoriteProduct,
+    TResult? Function()? loadFavorites,
   }) {
     return getListProduct?.call(isLoadMore);
   }
@@ -176,6 +192,8 @@ class _$GetListProductImpl implements _GetListProduct {
     TResult Function(bool isLoadMore)? getListProduct,
     TResult Function(String keyword)? searchProduct,
     TResult Function()? clearProductData,
+    TResult Function(int productId)? favoriteProduct,
+    TResult Function()? loadFavorites,
     required TResult orElse(),
   }) {
     if (getListProduct != null) {
@@ -190,6 +208,8 @@ class _$GetListProductImpl implements _GetListProduct {
     required TResult Function(_GetListProduct value) getListProduct,
     required TResult Function(_SearchProduct value) searchProduct,
     required TResult Function(_ClearProduct value) clearProductData,
+    required TResult Function(_FavoriteProduct value) favoriteProduct,
+    required TResult Function(_LoadFavorites value) loadFavorites,
   }) {
     return getListProduct(this);
   }
@@ -200,6 +220,8 @@ class _$GetListProductImpl implements _GetListProduct {
     TResult? Function(_GetListProduct value)? getListProduct,
     TResult? Function(_SearchProduct value)? searchProduct,
     TResult? Function(_ClearProduct value)? clearProductData,
+    TResult? Function(_FavoriteProduct value)? favoriteProduct,
+    TResult? Function(_LoadFavorites value)? loadFavorites,
   }) {
     return getListProduct?.call(this);
   }
@@ -210,6 +232,8 @@ class _$GetListProductImpl implements _GetListProduct {
     TResult Function(_GetListProduct value)? getListProduct,
     TResult Function(_SearchProduct value)? searchProduct,
     TResult Function(_ClearProduct value)? clearProductData,
+    TResult Function(_FavoriteProduct value)? favoriteProduct,
+    TResult Function(_LoadFavorites value)? loadFavorites,
     required TResult orElse(),
   }) {
     if (getListProduct != null) {
@@ -234,9 +258,8 @@ abstract class _GetListProduct implements ProductEvent {
 /// @nodoc
 abstract class _$$SearchProductImplCopyWith<$Res> {
   factory _$$SearchProductImplCopyWith(
-    _$SearchProductImpl value,
-    $Res Function(_$SearchProductImpl) then,
-  ) = __$$SearchProductImplCopyWithImpl<$Res>;
+          _$SearchProductImpl value, $Res Function(_$SearchProductImpl) then) =
+      __$$SearchProductImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String keyword});
 }
@@ -246,23 +269,22 @@ class __$$SearchProductImplCopyWithImpl<$Res>
     extends _$ProductEventCopyWithImpl<$Res, _$SearchProductImpl>
     implements _$$SearchProductImplCopyWith<$Res> {
   __$$SearchProductImplCopyWithImpl(
-    _$SearchProductImpl _value,
-    $Res Function(_$SearchProductImpl) _then,
-  ) : super(_value, _then);
+      _$SearchProductImpl _value, $Res Function(_$SearchProductImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ProductEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? keyword = null}) {
-    return _then(
-      _$SearchProductImpl(
-        null == keyword
-            ? _value.keyword
-            : keyword // ignore: cast_nullable_to_non_nullable
-                as String,
-      ),
-    );
+  $Res call({
+    Object? keyword = null,
+  }) {
+    return _then(_$SearchProductImpl(
+      null == keyword
+          ? _value.keyword
+          : keyword // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -304,6 +326,8 @@ class _$SearchProductImpl implements _SearchProduct {
     required TResult Function(bool isLoadMore) getListProduct,
     required TResult Function(String keyword) searchProduct,
     required TResult Function() clearProductData,
+    required TResult Function(int productId) favoriteProduct,
+    required TResult Function() loadFavorites,
   }) {
     return searchProduct(keyword);
   }
@@ -314,6 +338,8 @@ class _$SearchProductImpl implements _SearchProduct {
     TResult? Function(bool isLoadMore)? getListProduct,
     TResult? Function(String keyword)? searchProduct,
     TResult? Function()? clearProductData,
+    TResult? Function(int productId)? favoriteProduct,
+    TResult? Function()? loadFavorites,
   }) {
     return searchProduct?.call(keyword);
   }
@@ -324,6 +350,8 @@ class _$SearchProductImpl implements _SearchProduct {
     TResult Function(bool isLoadMore)? getListProduct,
     TResult Function(String keyword)? searchProduct,
     TResult Function()? clearProductData,
+    TResult Function(int productId)? favoriteProduct,
+    TResult Function()? loadFavorites,
     required TResult orElse(),
   }) {
     if (searchProduct != null) {
@@ -338,6 +366,8 @@ class _$SearchProductImpl implements _SearchProduct {
     required TResult Function(_GetListProduct value) getListProduct,
     required TResult Function(_SearchProduct value) searchProduct,
     required TResult Function(_ClearProduct value) clearProductData,
+    required TResult Function(_FavoriteProduct value) favoriteProduct,
+    required TResult Function(_LoadFavorites value) loadFavorites,
   }) {
     return searchProduct(this);
   }
@@ -348,6 +378,8 @@ class _$SearchProductImpl implements _SearchProduct {
     TResult? Function(_GetListProduct value)? getListProduct,
     TResult? Function(_SearchProduct value)? searchProduct,
     TResult? Function(_ClearProduct value)? clearProductData,
+    TResult? Function(_FavoriteProduct value)? favoriteProduct,
+    TResult? Function(_LoadFavorites value)? loadFavorites,
   }) {
     return searchProduct?.call(this);
   }
@@ -358,6 +390,8 @@ class _$SearchProductImpl implements _SearchProduct {
     TResult Function(_GetListProduct value)? getListProduct,
     TResult Function(_SearchProduct value)? searchProduct,
     TResult Function(_ClearProduct value)? clearProductData,
+    TResult Function(_FavoriteProduct value)? favoriteProduct,
+    TResult Function(_LoadFavorites value)? loadFavorites,
     required TResult orElse(),
   }) {
     if (searchProduct != null) {
@@ -382,9 +416,8 @@ abstract class _SearchProduct implements ProductEvent {
 /// @nodoc
 abstract class _$$ClearProductImplCopyWith<$Res> {
   factory _$$ClearProductImplCopyWith(
-    _$ClearProductImpl value,
-    $Res Function(_$ClearProductImpl) then,
-  ) = __$$ClearProductImplCopyWithImpl<$Res>;
+          _$ClearProductImpl value, $Res Function(_$ClearProductImpl) then) =
+      __$$ClearProductImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -392,9 +425,8 @@ class __$$ClearProductImplCopyWithImpl<$Res>
     extends _$ProductEventCopyWithImpl<$Res, _$ClearProductImpl>
     implements _$$ClearProductImplCopyWith<$Res> {
   __$$ClearProductImplCopyWithImpl(
-    _$ClearProductImpl _value,
-    $Res Function(_$ClearProductImpl) _then,
-  ) : super(_value, _then);
+      _$ClearProductImpl _value, $Res Function(_$ClearProductImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ProductEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -425,6 +457,8 @@ class _$ClearProductImpl implements _ClearProduct {
     required TResult Function(bool isLoadMore) getListProduct,
     required TResult Function(String keyword) searchProduct,
     required TResult Function() clearProductData,
+    required TResult Function(int productId) favoriteProduct,
+    required TResult Function() loadFavorites,
   }) {
     return clearProductData();
   }
@@ -435,6 +469,8 @@ class _$ClearProductImpl implements _ClearProduct {
     TResult? Function(bool isLoadMore)? getListProduct,
     TResult? Function(String keyword)? searchProduct,
     TResult? Function()? clearProductData,
+    TResult? Function(int productId)? favoriteProduct,
+    TResult? Function()? loadFavorites,
   }) {
     return clearProductData?.call();
   }
@@ -445,6 +481,8 @@ class _$ClearProductImpl implements _ClearProduct {
     TResult Function(bool isLoadMore)? getListProduct,
     TResult Function(String keyword)? searchProduct,
     TResult Function()? clearProductData,
+    TResult Function(int productId)? favoriteProduct,
+    TResult Function()? loadFavorites,
     required TResult orElse(),
   }) {
     if (clearProductData != null) {
@@ -459,6 +497,8 @@ class _$ClearProductImpl implements _ClearProduct {
     required TResult Function(_GetListProduct value) getListProduct,
     required TResult Function(_SearchProduct value) searchProduct,
     required TResult Function(_ClearProduct value) clearProductData,
+    required TResult Function(_FavoriteProduct value) favoriteProduct,
+    required TResult Function(_LoadFavorites value) loadFavorites,
   }) {
     return clearProductData(this);
   }
@@ -469,6 +509,8 @@ class _$ClearProductImpl implements _ClearProduct {
     TResult? Function(_GetListProduct value)? getListProduct,
     TResult? Function(_SearchProduct value)? searchProduct,
     TResult? Function(_ClearProduct value)? clearProductData,
+    TResult? Function(_FavoriteProduct value)? favoriteProduct,
+    TResult? Function(_LoadFavorites value)? loadFavorites,
   }) {
     return clearProductData?.call(this);
   }
@@ -479,6 +521,8 @@ class _$ClearProductImpl implements _ClearProduct {
     TResult Function(_GetListProduct value)? getListProduct,
     TResult Function(_SearchProduct value)? searchProduct,
     TResult Function(_ClearProduct value)? clearProductData,
+    TResult Function(_FavoriteProduct value)? favoriteProduct,
+    TResult Function(_LoadFavorites value)? loadFavorites,
     required TResult orElse(),
   }) {
     if (clearProductData != null) {
@@ -493,11 +537,295 @@ abstract class _ClearProduct implements ProductEvent {
 }
 
 /// @nodoc
+abstract class _$$FavoriteProductImplCopyWith<$Res> {
+  factory _$$FavoriteProductImplCopyWith(_$FavoriteProductImpl value,
+          $Res Function(_$FavoriteProductImpl) then) =
+      __$$FavoriteProductImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int productId});
+}
+
+/// @nodoc
+class __$$FavoriteProductImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$FavoriteProductImpl>
+    implements _$$FavoriteProductImplCopyWith<$Res> {
+  __$$FavoriteProductImplCopyWithImpl(
+      _$FavoriteProductImpl _value, $Res Function(_$FavoriteProductImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? productId = null,
+  }) {
+    return _then(_$FavoriteProductImpl(
+      null == productId
+          ? _value.productId
+          : productId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FavoriteProductImpl implements _FavoriteProduct {
+  const _$FavoriteProductImpl(this.productId);
+
+  @override
+  final int productId;
+
+  @override
+  String toString() {
+    return 'ProductEvent.favoriteProduct(productId: $productId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FavoriteProductImpl &&
+            (identical(other.productId, productId) ||
+                other.productId == productId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, productId);
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FavoriteProductImplCopyWith<_$FavoriteProductImpl> get copyWith =>
+      __$$FavoriteProductImplCopyWithImpl<_$FavoriteProductImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool isLoadMore) getListProduct,
+    required TResult Function(String keyword) searchProduct,
+    required TResult Function() clearProductData,
+    required TResult Function(int productId) favoriteProduct,
+    required TResult Function() loadFavorites,
+  }) {
+    return favoriteProduct(productId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool isLoadMore)? getListProduct,
+    TResult? Function(String keyword)? searchProduct,
+    TResult? Function()? clearProductData,
+    TResult? Function(int productId)? favoriteProduct,
+    TResult? Function()? loadFavorites,
+  }) {
+    return favoriteProduct?.call(productId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool isLoadMore)? getListProduct,
+    TResult Function(String keyword)? searchProduct,
+    TResult Function()? clearProductData,
+    TResult Function(int productId)? favoriteProduct,
+    TResult Function()? loadFavorites,
+    required TResult orElse(),
+  }) {
+    if (favoriteProduct != null) {
+      return favoriteProduct(productId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetListProduct value) getListProduct,
+    required TResult Function(_SearchProduct value) searchProduct,
+    required TResult Function(_ClearProduct value) clearProductData,
+    required TResult Function(_FavoriteProduct value) favoriteProduct,
+    required TResult Function(_LoadFavorites value) loadFavorites,
+  }) {
+    return favoriteProduct(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetListProduct value)? getListProduct,
+    TResult? Function(_SearchProduct value)? searchProduct,
+    TResult? Function(_ClearProduct value)? clearProductData,
+    TResult? Function(_FavoriteProduct value)? favoriteProduct,
+    TResult? Function(_LoadFavorites value)? loadFavorites,
+  }) {
+    return favoriteProduct?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetListProduct value)? getListProduct,
+    TResult Function(_SearchProduct value)? searchProduct,
+    TResult Function(_ClearProduct value)? clearProductData,
+    TResult Function(_FavoriteProduct value)? favoriteProduct,
+    TResult Function(_LoadFavorites value)? loadFavorites,
+    required TResult orElse(),
+  }) {
+    if (favoriteProduct != null) {
+      return favoriteProduct(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FavoriteProduct implements ProductEvent {
+  const factory _FavoriteProduct(final int productId) = _$FavoriteProductImpl;
+
+  int get productId;
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FavoriteProductImplCopyWith<_$FavoriteProductImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadFavoritesImplCopyWith<$Res> {
+  factory _$$LoadFavoritesImplCopyWith(
+          _$LoadFavoritesImpl value, $Res Function(_$LoadFavoritesImpl) then) =
+      __$$LoadFavoritesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadFavoritesImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$LoadFavoritesImpl>
+    implements _$$LoadFavoritesImplCopyWith<$Res> {
+  __$$LoadFavoritesImplCopyWithImpl(
+      _$LoadFavoritesImpl _value, $Res Function(_$LoadFavoritesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadFavoritesImpl implements _LoadFavorites {
+  const _$LoadFavoritesImpl();
+
+  @override
+  String toString() {
+    return 'ProductEvent.loadFavorites()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadFavoritesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool isLoadMore) getListProduct,
+    required TResult Function(String keyword) searchProduct,
+    required TResult Function() clearProductData,
+    required TResult Function(int productId) favoriteProduct,
+    required TResult Function() loadFavorites,
+  }) {
+    return loadFavorites();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool isLoadMore)? getListProduct,
+    TResult? Function(String keyword)? searchProduct,
+    TResult? Function()? clearProductData,
+    TResult? Function(int productId)? favoriteProduct,
+    TResult? Function()? loadFavorites,
+  }) {
+    return loadFavorites?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool isLoadMore)? getListProduct,
+    TResult Function(String keyword)? searchProduct,
+    TResult Function()? clearProductData,
+    TResult Function(int productId)? favoriteProduct,
+    TResult Function()? loadFavorites,
+    required TResult orElse(),
+  }) {
+    if (loadFavorites != null) {
+      return loadFavorites();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetListProduct value) getListProduct,
+    required TResult Function(_SearchProduct value) searchProduct,
+    required TResult Function(_ClearProduct value) clearProductData,
+    required TResult Function(_FavoriteProduct value) favoriteProduct,
+    required TResult Function(_LoadFavorites value) loadFavorites,
+  }) {
+    return loadFavorites(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetListProduct value)? getListProduct,
+    TResult? Function(_SearchProduct value)? searchProduct,
+    TResult? Function(_ClearProduct value)? clearProductData,
+    TResult? Function(_FavoriteProduct value)? favoriteProduct,
+    TResult? Function(_LoadFavorites value)? loadFavorites,
+  }) {
+    return loadFavorites?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetListProduct value)? getListProduct,
+    TResult Function(_SearchProduct value)? searchProduct,
+    TResult Function(_ClearProduct value)? clearProductData,
+    TResult Function(_FavoriteProduct value)? favoriteProduct,
+    TResult Function(_LoadFavorites value)? loadFavorites,
+    required TResult orElse(),
+  }) {
+    if (loadFavorites != null) {
+      return loadFavorites(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadFavorites implements ProductEvent {
+  const factory _LoadFavorites() = _$LoadFavoritesImpl;
+}
+
+/// @nodoc
 mixin _$ProductState {
   dynamic get status => throw _privateConstructorUsedError;
   dynamic get isLoadMore => throw _privateConstructorUsedError;
   ResponseProduct? get products => throw _privateConstructorUsedError;
   ResponseProduct? get productsSearch => throw _privateConstructorUsedError;
+  List<int> get favorites => throw _privateConstructorUsedError;
 
   /// Create a copy of ProductState
   /// with the given fields replaced by the non-null parameter values.
@@ -509,16 +837,15 @@ mixin _$ProductState {
 /// @nodoc
 abstract class $ProductStateCopyWith<$Res> {
   factory $ProductStateCopyWith(
-    ProductState value,
-    $Res Function(ProductState) then,
-  ) = _$ProductStateCopyWithImpl<$Res, ProductState>;
+          ProductState value, $Res Function(ProductState) then) =
+      _$ProductStateCopyWithImpl<$Res, ProductState>;
   @useResult
-  $Res call({
-    dynamic status,
-    dynamic isLoadMore,
-    ResponseProduct? products,
-    ResponseProduct? productsSearch,
-  });
+  $Res call(
+      {dynamic status,
+      dynamic isLoadMore,
+      ResponseProduct? products,
+      ResponseProduct? productsSearch,
+      List<int> favorites});
 
   $ResponseProductCopyWith<$Res>? get products;
   $ResponseProductCopyWith<$Res>? get productsSearch;
@@ -543,32 +870,30 @@ class _$ProductStateCopyWithImpl<$Res, $Val extends ProductState>
     Object? isLoadMore = freezed,
     Object? products = freezed,
     Object? productsSearch = freezed,
+    Object? favorites = null,
   }) {
-    return _then(
-      _value.copyWith(
-            status:
-                freezed == status
-                    ? _value.status
-                    : status // ignore: cast_nullable_to_non_nullable
-                        as dynamic,
-            isLoadMore:
-                freezed == isLoadMore
-                    ? _value.isLoadMore
-                    : isLoadMore // ignore: cast_nullable_to_non_nullable
-                        as dynamic,
-            products:
-                freezed == products
-                    ? _value.products
-                    : products // ignore: cast_nullable_to_non_nullable
-                        as ResponseProduct?,
-            productsSearch:
-                freezed == productsSearch
-                    ? _value.productsSearch
-                    : productsSearch // ignore: cast_nullable_to_non_nullable
-                        as ResponseProduct?,
-          )
-          as $Val,
-    );
+    return _then(_value.copyWith(
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      isLoadMore: freezed == isLoadMore
+          ? _value.isLoadMore
+          : isLoadMore // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      products: freezed == products
+          ? _value.products
+          : products // ignore: cast_nullable_to_non_nullable
+              as ResponseProduct?,
+      productsSearch: freezed == productsSearch
+          ? _value.productsSearch
+          : productsSearch // ignore: cast_nullable_to_non_nullable
+              as ResponseProduct?,
+      favorites: null == favorites
+          ? _value.favorites
+          : favorites // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+    ) as $Val);
   }
 
   /// Create a copy of ProductState
@@ -604,17 +929,16 @@ class _$ProductStateCopyWithImpl<$Res, $Val extends ProductState>
 abstract class _$$ProductStateImplCopyWith<$Res>
     implements $ProductStateCopyWith<$Res> {
   factory _$$ProductStateImplCopyWith(
-    _$ProductStateImpl value,
-    $Res Function(_$ProductStateImpl) then,
-  ) = __$$ProductStateImplCopyWithImpl<$Res>;
+          _$ProductStateImpl value, $Res Function(_$ProductStateImpl) then) =
+      __$$ProductStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({
-    dynamic status,
-    dynamic isLoadMore,
-    ResponseProduct? products,
-    ResponseProduct? productsSearch,
-  });
+  $Res call(
+      {dynamic status,
+      dynamic isLoadMore,
+      ResponseProduct? products,
+      ResponseProduct? productsSearch,
+      List<int> favorites});
 
   @override
   $ResponseProductCopyWith<$Res>? get products;
@@ -627,9 +951,8 @@ class __$$ProductStateImplCopyWithImpl<$Res>
     extends _$ProductStateCopyWithImpl<$Res, _$ProductStateImpl>
     implements _$$ProductStateImplCopyWith<$Res> {
   __$$ProductStateImplCopyWithImpl(
-    _$ProductStateImpl _value,
-    $Res Function(_$ProductStateImpl) _then,
-  ) : super(_value, _then);
+      _$ProductStateImpl _value, $Res Function(_$ProductStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ProductState
   /// with the given fields replaced by the non-null parameter values.
@@ -640,35 +963,37 @@ class __$$ProductStateImplCopyWithImpl<$Res>
     Object? isLoadMore = freezed,
     Object? products = freezed,
     Object? productsSearch = freezed,
+    Object? favorites = null,
   }) {
-    return _then(
-      _$ProductStateImpl(
-        status: freezed == status ? _value.status! : status,
-        isLoadMore: freezed == isLoadMore ? _value.isLoadMore! : isLoadMore,
-        products:
-            freezed == products
-                ? _value.products
-                : products // ignore: cast_nullable_to_non_nullable
-                    as ResponseProduct?,
-        productsSearch:
-            freezed == productsSearch
-                ? _value.productsSearch
-                : productsSearch // ignore: cast_nullable_to_non_nullable
-                    as ResponseProduct?,
-      ),
-    );
+    return _then(_$ProductStateImpl(
+      status: freezed == status ? _value.status! : status,
+      isLoadMore: freezed == isLoadMore ? _value.isLoadMore! : isLoadMore,
+      products: freezed == products
+          ? _value.products
+          : products // ignore: cast_nullable_to_non_nullable
+              as ResponseProduct?,
+      productsSearch: freezed == productsSearch
+          ? _value.productsSearch
+          : productsSearch // ignore: cast_nullable_to_non_nullable
+              as ResponseProduct?,
+      favorites: null == favorites
+          ? _value._favorites
+          : favorites // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$ProductStateImpl implements _ProductState {
-  const _$ProductStateImpl({
-    this.status = ProductStatus.init,
-    this.isLoadMore = false,
-    this.products,
-    this.productsSearch,
-  });
+  const _$ProductStateImpl(
+      {this.status = ProductStatus.init,
+      this.isLoadMore = false,
+      this.products,
+      this.productsSearch,
+      final List<int> favorites = const []})
+      : _favorites = favorites;
 
   @override
   @JsonKey()
@@ -680,10 +1005,18 @@ class _$ProductStateImpl implements _ProductState {
   final ResponseProduct? products;
   @override
   final ResponseProduct? productsSearch;
+  final List<int> _favorites;
+  @override
+  @JsonKey()
+  List<int> get favorites {
+    if (_favorites is EqualUnmodifiableListView) return _favorites;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_favorites);
+  }
 
   @override
   String toString() {
-    return 'ProductState(status: $status, isLoadMore: $isLoadMore, products: $products, productsSearch: $productsSearch)';
+    return 'ProductState(status: $status, isLoadMore: $isLoadMore, products: $products, productsSearch: $productsSearch, favorites: $favorites)';
   }
 
   @override
@@ -692,24 +1025,24 @@ class _$ProductStateImpl implements _ProductState {
         (other.runtimeType == runtimeType &&
             other is _$ProductStateImpl &&
             const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality().equals(
-              other.isLoadMore,
-              isLoadMore,
-            ) &&
+            const DeepCollectionEquality()
+                .equals(other.isLoadMore, isLoadMore) &&
             (identical(other.products, products) ||
                 other.products == products) &&
             (identical(other.productsSearch, productsSearch) ||
-                other.productsSearch == productsSearch));
+                other.productsSearch == productsSearch) &&
+            const DeepCollectionEquality()
+                .equals(other._favorites, _favorites));
   }
 
   @override
   int get hashCode => Object.hash(
-    runtimeType,
-    const DeepCollectionEquality().hash(status),
-    const DeepCollectionEquality().hash(isLoadMore),
-    products,
-    productsSearch,
-  );
+      runtimeType,
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(isLoadMore),
+      products,
+      productsSearch,
+      const DeepCollectionEquality().hash(_favorites));
 
   /// Create a copy of ProductState
   /// with the given fields replaced by the non-null parameter values.
@@ -721,12 +1054,12 @@ class _$ProductStateImpl implements _ProductState {
 }
 
 abstract class _ProductState implements ProductState {
-  const factory _ProductState({
-    final dynamic status,
-    final dynamic isLoadMore,
-    final ResponseProduct? products,
-    final ResponseProduct? productsSearch,
-  }) = _$ProductStateImpl;
+  const factory _ProductState(
+      {final dynamic status,
+      final dynamic isLoadMore,
+      final ResponseProduct? products,
+      final ResponseProduct? productsSearch,
+      final List<int> favorites}) = _$ProductStateImpl;
 
   @override
   dynamic get status;
@@ -736,6 +1069,8 @@ abstract class _ProductState implements ProductState {
   ResponseProduct? get products;
   @override
   ResponseProduct? get productsSearch;
+  @override
+  List<int> get favorites;
 
   /// Create a copy of ProductState
   /// with the given fields replaced by the non-null parameter values.

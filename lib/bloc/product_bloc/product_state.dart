@@ -10,5 +10,6 @@ class ProductState with _$ProductState {
     @Default(false) isLoadMore,
     ResponseProduct? products,
     ResponseProduct? productsSearch,
+    @Default([]) List<int> favorites,
   }) = _ProductState;
 }

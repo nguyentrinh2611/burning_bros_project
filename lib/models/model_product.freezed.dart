@@ -12,8 +12,7 @@ part of 'model_product.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 ResponseProduct _$ResponseProductFromJson(Map<String, dynamic> json) {
   return _ResponseProduct.fromJson(json);
@@ -43,16 +42,14 @@ mixin _$ResponseProduct {
 /// @nodoc
 abstract class $ResponseProductCopyWith<$Res> {
   factory $ResponseProductCopyWith(
-    ResponseProduct value,
-    $Res Function(ResponseProduct) then,
-  ) = _$ResponseProductCopyWithImpl<$Res, ResponseProduct>;
+          ResponseProduct value, $Res Function(ResponseProduct) then) =
+      _$ResponseProductCopyWithImpl<$Res, ResponseProduct>;
   @useResult
-  $Res call({
-    @JsonKey(name: "products") List<ItemProduct> products,
-    @JsonKey(name: "total") int total,
-    @JsonKey(name: "skip") int skip,
-    @JsonKey(name: "limit") int limit,
-  });
+  $Res call(
+      {@JsonKey(name: "products") List<ItemProduct> products,
+      @JsonKey(name: "total") int total,
+      @JsonKey(name: "skip") int skip,
+      @JsonKey(name: "limit") int limit});
 }
 
 /// @nodoc
@@ -75,49 +72,40 @@ class _$ResponseProductCopyWithImpl<$Res, $Val extends ResponseProduct>
     Object? skip = null,
     Object? limit = null,
   }) {
-    return _then(
-      _value.copyWith(
-            products:
-                null == products
-                    ? _value.products
-                    : products // ignore: cast_nullable_to_non_nullable
-                        as List<ItemProduct>,
-            total:
-                null == total
-                    ? _value.total
-                    : total // ignore: cast_nullable_to_non_nullable
-                        as int,
-            skip:
-                null == skip
-                    ? _value.skip
-                    : skip // ignore: cast_nullable_to_non_nullable
-                        as int,
-            limit:
-                null == limit
-                    ? _value.limit
-                    : limit // ignore: cast_nullable_to_non_nullable
-                        as int,
-          )
-          as $Val,
-    );
+    return _then(_value.copyWith(
+      products: null == products
+          ? _value.products
+          : products // ignore: cast_nullable_to_non_nullable
+              as List<ItemProduct>,
+      total: null == total
+          ? _value.total
+          : total // ignore: cast_nullable_to_non_nullable
+              as int,
+      skip: null == skip
+          ? _value.skip
+          : skip // ignore: cast_nullable_to_non_nullable
+              as int,
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$ResponseProductImplCopyWith<$Res>
     implements $ResponseProductCopyWith<$Res> {
-  factory _$$ResponseProductImplCopyWith(
-    _$ResponseProductImpl value,
-    $Res Function(_$ResponseProductImpl) then,
-  ) = __$$ResponseProductImplCopyWithImpl<$Res>;
+  factory _$$ResponseProductImplCopyWith(_$ResponseProductImpl value,
+          $Res Function(_$ResponseProductImpl) then) =
+      __$$ResponseProductImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({
-    @JsonKey(name: "products") List<ItemProduct> products,
-    @JsonKey(name: "total") int total,
-    @JsonKey(name: "skip") int skip,
-    @JsonKey(name: "limit") int limit,
-  });
+  $Res call(
+      {@JsonKey(name: "products") List<ItemProduct> products,
+      @JsonKey(name: "total") int total,
+      @JsonKey(name: "skip") int skip,
+      @JsonKey(name: "limit") int limit});
 }
 
 /// @nodoc
@@ -125,9 +113,8 @@ class __$$ResponseProductImplCopyWithImpl<$Res>
     extends _$ResponseProductCopyWithImpl<$Res, _$ResponseProductImpl>
     implements _$$ResponseProductImplCopyWith<$Res> {
   __$$ResponseProductImplCopyWithImpl(
-    _$ResponseProductImpl _value,
-    $Res Function(_$ResponseProductImpl) _then,
-  ) : super(_value, _then);
+      _$ResponseProductImpl _value, $Res Function(_$ResponseProductImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ResponseProduct
   /// with the given fields replaced by the non-null parameter values.
@@ -139,42 +126,36 @@ class __$$ResponseProductImplCopyWithImpl<$Res>
     Object? skip = null,
     Object? limit = null,
   }) {
-    return _then(
-      _$ResponseProductImpl(
-        products:
-            null == products
-                ? _value._products
-                : products // ignore: cast_nullable_to_non_nullable
-                    as List<ItemProduct>,
-        total:
-            null == total
-                ? _value.total
-                : total // ignore: cast_nullable_to_non_nullable
-                    as int,
-        skip:
-            null == skip
-                ? _value.skip
-                : skip // ignore: cast_nullable_to_non_nullable
-                    as int,
-        limit:
-            null == limit
-                ? _value.limit
-                : limit // ignore: cast_nullable_to_non_nullable
-                    as int,
-      ),
-    );
+    return _then(_$ResponseProductImpl(
+      products: null == products
+          ? _value._products
+          : products // ignore: cast_nullable_to_non_nullable
+              as List<ItemProduct>,
+      total: null == total
+          ? _value.total
+          : total // ignore: cast_nullable_to_non_nullable
+              as int,
+      skip: null == skip
+          ? _value.skip
+          : skip // ignore: cast_nullable_to_non_nullable
+              as int,
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$ResponseProductImpl implements _ResponseProduct {
-  const _$ResponseProductImpl({
-    @JsonKey(name: "products") final List<ItemProduct> products = const [],
-    @JsonKey(name: "total") this.total = 0,
-    @JsonKey(name: "skip") this.skip = 0,
-    @JsonKey(name: "limit") this.limit = 0,
-  }) : _products = products;
+  const _$ResponseProductImpl(
+      {@JsonKey(name: "products") final List<ItemProduct> products = const [],
+      @JsonKey(name: "total") this.total = 0,
+      @JsonKey(name: "skip") this.skip = 0,
+      @JsonKey(name: "limit") this.limit = 0})
+      : _products = products;
 
   factory _$ResponseProductImpl.fromJson(Map<String, dynamic> json) =>
       _$$ResponseProductImplFromJson(json);
@@ -216,13 +197,8 @@ class _$ResponseProductImpl implements _ResponseProduct {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    const DeepCollectionEquality().hash(_products),
-    total,
-    skip,
-    limit,
-  );
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_products), total, skip, limit);
 
   /// Create a copy of ResponseProduct
   /// with the given fields replaced by the non-null parameter values.
@@ -231,23 +207,22 @@ class _$ResponseProductImpl implements _ResponseProduct {
   @pragma('vm:prefer-inline')
   _$$ResponseProductImplCopyWith<_$ResponseProductImpl> get copyWith =>
       __$$ResponseProductImplCopyWithImpl<_$ResponseProductImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ResponseProductImplToJson(this);
+    return _$$ResponseProductImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _ResponseProduct implements ResponseProduct {
-  const factory _ResponseProduct({
-    @JsonKey(name: "products") final List<ItemProduct> products,
-    @JsonKey(name: "total") final int total,
-    @JsonKey(name: "skip") final int skip,
-    @JsonKey(name: "limit") final int limit,
-  }) = _$ResponseProductImpl;
+  const factory _ResponseProduct(
+      {@JsonKey(name: "products") final List<ItemProduct> products,
+      @JsonKey(name: "total") final int total,
+      @JsonKey(name: "skip") final int skip,
+      @JsonKey(name: "limit") final int limit}) = _$ResponseProductImpl;
 
   factory _ResponseProduct.fromJson(Map<String, dynamic> json) =
       _$ResponseProductImpl.fromJson;
@@ -305,18 +280,16 @@ mixin _$ItemProduct {
 /// @nodoc
 abstract class $ItemProductCopyWith<$Res> {
   factory $ItemProductCopyWith(
-    ItemProduct value,
-    $Res Function(ItemProduct) then,
-  ) = _$ItemProductCopyWithImpl<$Res, ItemProduct>;
+          ItemProduct value, $Res Function(ItemProduct) then) =
+      _$ItemProductCopyWithImpl<$Res, ItemProduct>;
   @useResult
-  $Res call({
-    @JsonKey(name: "id") int id,
-    @JsonKey(name: "title") String title,
-    @JsonKey(name: "description") String description,
-    @JsonKey(name: "thumbnail") String imageUrl,
-    @JsonKey(name: "category") String category,
-    @JsonKey(name: "price") double price,
-  });
+  $Res call(
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "title") String title,
+      @JsonKey(name: "description") String description,
+      @JsonKey(name: "thumbnail") String imageUrl,
+      @JsonKey(name: "category") String category,
+      @JsonKey(name: "price") double price});
 }
 
 /// @nodoc
@@ -341,41 +314,32 @@ class _$ItemProductCopyWithImpl<$Res, $Val extends ItemProduct>
     Object? category = null,
     Object? price = null,
   }) {
-    return _then(
-      _value.copyWith(
-            id:
-                null == id
-                    ? _value.id
-                    : id // ignore: cast_nullable_to_non_nullable
-                        as int,
-            title:
-                null == title
-                    ? _value.title
-                    : title // ignore: cast_nullable_to_non_nullable
-                        as String,
-            description:
-                null == description
-                    ? _value.description
-                    : description // ignore: cast_nullable_to_non_nullable
-                        as String,
-            imageUrl:
-                null == imageUrl
-                    ? _value.imageUrl
-                    : imageUrl // ignore: cast_nullable_to_non_nullable
-                        as String,
-            category:
-                null == category
-                    ? _value.category
-                    : category // ignore: cast_nullable_to_non_nullable
-                        as String,
-            price:
-                null == price
-                    ? _value.price
-                    : price // ignore: cast_nullable_to_non_nullable
-                        as double,
-          )
-          as $Val,
-    );
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageUrl: null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as double,
+    ) as $Val);
   }
 }
 
@@ -383,19 +347,17 @@ class _$ItemProductCopyWithImpl<$Res, $Val extends ItemProduct>
 abstract class _$$ItemProductImplCopyWith<$Res>
     implements $ItemProductCopyWith<$Res> {
   factory _$$ItemProductImplCopyWith(
-    _$ItemProductImpl value,
-    $Res Function(_$ItemProductImpl) then,
-  ) = __$$ItemProductImplCopyWithImpl<$Res>;
+          _$ItemProductImpl value, $Res Function(_$ItemProductImpl) then) =
+      __$$ItemProductImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({
-    @JsonKey(name: "id") int id,
-    @JsonKey(name: "title") String title,
-    @JsonKey(name: "description") String description,
-    @JsonKey(name: "thumbnail") String imageUrl,
-    @JsonKey(name: "category") String category,
-    @JsonKey(name: "price") double price,
-  });
+  $Res call(
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "title") String title,
+      @JsonKey(name: "description") String description,
+      @JsonKey(name: "thumbnail") String imageUrl,
+      @JsonKey(name: "category") String category,
+      @JsonKey(name: "price") double price});
 }
 
 /// @nodoc
@@ -403,9 +365,8 @@ class __$$ItemProductImplCopyWithImpl<$Res>
     extends _$ItemProductCopyWithImpl<$Res, _$ItemProductImpl>
     implements _$$ItemProductImplCopyWith<$Res> {
   __$$ItemProductImplCopyWithImpl(
-    _$ItemProductImpl _value,
-    $Res Function(_$ItemProductImpl) _then,
-  ) : super(_value, _then);
+      _$ItemProductImpl _value, $Res Function(_$ItemProductImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ItemProduct
   /// with the given fields replaced by the non-null parameter values.
@@ -419,54 +380,45 @@ class __$$ItemProductImplCopyWithImpl<$Res>
     Object? category = null,
     Object? price = null,
   }) {
-    return _then(
-      _$ItemProductImpl(
-        id:
-            null == id
-                ? _value.id
-                : id // ignore: cast_nullable_to_non_nullable
-                    as int,
-        title:
-            null == title
-                ? _value.title
-                : title // ignore: cast_nullable_to_non_nullable
-                    as String,
-        description:
-            null == description
-                ? _value.description
-                : description // ignore: cast_nullable_to_non_nullable
-                    as String,
-        imageUrl:
-            null == imageUrl
-                ? _value.imageUrl
-                : imageUrl // ignore: cast_nullable_to_non_nullable
-                    as String,
-        category:
-            null == category
-                ? _value.category
-                : category // ignore: cast_nullable_to_non_nullable
-                    as String,
-        price:
-            null == price
-                ? _value.price
-                : price // ignore: cast_nullable_to_non_nullable
-                    as double,
-      ),
-    );
+    return _then(_$ItemProductImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageUrl: null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$ItemProductImpl implements _ItemProduct {
-  const _$ItemProductImpl({
-    @JsonKey(name: "id") this.id = 0,
-    @JsonKey(name: "title") this.title = "",
-    @JsonKey(name: "description") this.description = "",
-    @JsonKey(name: "thumbnail") this.imageUrl = "",
-    @JsonKey(name: "category") this.category = "",
-    @JsonKey(name: "price") this.price = 0,
-  });
+  const _$ItemProductImpl(
+      {@JsonKey(name: "id") this.id = 0,
+      @JsonKey(name: "title") this.title = "",
+      @JsonKey(name: "description") this.description = "",
+      @JsonKey(name: "thumbnail") this.imageUrl = "",
+      @JsonKey(name: "category") this.category = "",
+      @JsonKey(name: "price") this.price = 0});
 
   factory _$ItemProductImpl.fromJson(Map<String, dynamic> json) =>
       _$$ItemProductImplFromJson(json);
@@ -514,14 +466,7 @@ class _$ItemProductImpl implements _ItemProduct {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-    runtimeType,
-    id,
-    title,
-    description,
-    imageUrl,
-    category,
-    price,
-  );
+      runtimeType, id, title, description, imageUrl, category, price);
 
   /// Create a copy of ItemProduct
   /// with the given fields replaced by the non-null parameter values.
@@ -533,19 +478,20 @@ class _$ItemProductImpl implements _ItemProduct {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ItemProductImplToJson(this);
+    return _$$ItemProductImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _ItemProduct implements ItemProduct {
-  const factory _ItemProduct({
-    @JsonKey(name: "id") final int id,
-    @JsonKey(name: "title") final String title,
-    @JsonKey(name: "description") final String description,
-    @JsonKey(name: "thumbnail") final String imageUrl,
-    @JsonKey(name: "category") final String category,
-    @JsonKey(name: "price") final double price,
-  }) = _$ItemProductImpl;
+  const factory _ItemProduct(
+      {@JsonKey(name: "id") final int id,
+      @JsonKey(name: "title") final String title,
+      @JsonKey(name: "description") final String description,
+      @JsonKey(name: "thumbnail") final String imageUrl,
+      @JsonKey(name: "category") final String category,
+      @JsonKey(name: "price") final double price}) = _$ItemProductImpl;
 
   factory _ItemProduct.fromJson(Map<String, dynamic> json) =
       _$ItemProductImpl.fromJson;

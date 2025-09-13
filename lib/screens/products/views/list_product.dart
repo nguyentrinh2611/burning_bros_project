@@ -3,9 +3,10 @@ import 'dart:async';
 import 'package:burning_bros_project/bloc/product_bloc/product_bloc.dart';
 import 'package:burning_bros_project/components/bb_text.dart';
 import 'package:burning_bros_project/models/model_product.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:burning_bros_project/screens/products/components/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class ListProduct extends StatefulWidget {
   const ListProduct({super.key});
@@ -19,6 +20,7 @@ class _ListProductState extends State<ListProduct> {
   TextEditingController textEditingController = TextEditingController();
   ProductBloc? _productBloc;
   Timer? _debounce;
+  final favoritesBox = Hive.box("favorites");
 
   @override
   void initState() {
@@ -26,6 +28,7 @@ class _ListProductState extends State<ListProduct> {
     controller.addListener(_onScroll);
     _productBloc = context.read<ProductBloc>();
     _productBloc!.add(ProductEvent.getListProduct(false));
+    _productBloc!.add(ProductEvent.loadFavorites());
   }
 
   @override
@@ -78,9 +81,7 @@ class _ListProductState extends State<ListProduct> {
                         FocusScope.of(context).focusedChild?.unfocus();
                       },
                       controller: textEditingController,
-                      onChanged: (value) {
-                        _onSearchChanged(value);
-                      },
+                      onChanged: _onSearchChanged,
                       enabled: true,
                       style: TextStyle(
                         color: Colors.black,
@@ -97,7 +98,7 @@ class _ListProductState extends State<ListProduct> {
                         filled: true,
                         isDense: true,
                         fillColor: Colors.grey.shade300,
-                        hintText: "",
+                        hintText: "Enter product name",
                         contentPadding: const EdgeInsets.only(
                           left: 14.0,
                           bottom: 14.0,
@@ -133,44 +134,13 @@ class _ListProductState extends State<ListProduct> {
                               physics: const AlwaysScrollableScrollPhysics(),
                               itemCount: products.length,
                               itemBuilder: (context, index) {
-                                return Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(width: 1, color: Colors.grey.shade600),
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  margin: EdgeInsets.only(bottom: 10),
-                                  height: 150,
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          color: Colors.pink.shade100,
-                                          borderRadius: BorderRadius.circular(8),
-                                        ),
-                                        child: CachedNetworkImage(
-                                          imageUrl: products[index].imageUrl,
-                                          key: UniqueKey(),
-                                          errorWidget:
-                                              (context, url, error) => Container(
-                                                color: Colors.pink.shade100,
-                                                width: 150,
-                                              ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: Padding(
-                                          padding: EdgeInsets.all(12),
-                                          child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              BBText(text: products[index].title, bold: true),
-                                              BBText(text: "${products[index].price}"),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+                                bool isFavorite = state.favorites.contains(products[index].id);
+                                return ProductCard(
+                                  isFavorite: isFavorite,
+                                  itemProduct: products[index],
+                                  onFavorite: (int id) {
+                                    _productBloc!.add(ProductEvent.favoriteProduct(id));
+                                  },
                                 );
                               },
                             )
