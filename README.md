@@ -1,16 +1,14 @@
 # burning_bros_project
 
-A new Flutter project.
+A simple Flutter app with:
+- Infinite scrolling product list.
+- Search by product name (with debounce).
+- Favorites are saved locally using [Hive](https://pub.dev/packages/hive).
 
-## Getting Started
+## 🚀 Setup & Run
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+git clone https://github.com/nguyentrinh2611/burning_bros_project.git
+cd burning_bros_project
+flutter pub get
+flutter run
